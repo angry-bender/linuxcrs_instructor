@@ -69,10 +69,10 @@ ensure shell changed
 sudo -u ${inuser} chsh -s /usr/bin/zsh
 
 #Create the drop user
-useradd -m -d /home/${inuser} -s /usr/bin/rssh ${inuser}
-echo "user ${inuser} added successfully!"
-echo ${inuser}:"Drop1" | chpasswd
-echo "Password for user ${inuser} changed successfully to Drop1"
+useradd -m -d /home/drop -s /usr/bin/rssh drop
+echo "user drop added successfully!"
+echo drop:"Drop1" | chpasswd
+echo "Password for user drop changed successfully to Drop1"
 
 git clone https://github.com/samfree91/linuxtraining.git 
 cp -r linuxtraining /home/$inuser/
