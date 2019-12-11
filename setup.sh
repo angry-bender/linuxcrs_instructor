@@ -35,22 +35,8 @@ if test -f "$FILE"; then
         exit
 fi
 
-
-
-
-#Prompt for standard username
-while [[ "${answer}" != "y" ]]
-    do
-        echo "What is the instructor users username? (The user you ran this script from)"
-        read inuser
-        echo "You have entered ${inuser} as the username for your standard user, is this correct? [y/n]"
-        read answer
-        while [[ ! "${answer}" =~ ^y$|^n$ ]]
-        do
-            echo/ "please select y or n"
-            read answer
-        done 
- done
+#Get the Standard Users username
+inuser=$SUDO_USER
 
 
 #Install Instructor Applications
