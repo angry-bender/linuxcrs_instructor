@@ -41,7 +41,7 @@ fi
 #Prompt for standard username
 while [[ "${answer}" != "y" ]]
     do
-        echo "What is the instructor users username?"
+        echo "What is the instructor users username? (The user you ran this script from)"
         read inuser
         echo "You have entered ${inuser} as the username for your standard user, is this correct? [y/n]"
         read answer
@@ -78,7 +78,7 @@ git clone https://github.com/samfree91/linuxtraining.git
 cp -r linuxtraining /home/$inuser/
 
 #remove my username with set username
-sed -i -e 's/setupuser/$inuser/g' .zshrc
+sed -i -e "s/setupuser/"${inuser}"/g" .zshrc
 
 #Enable ssh
 systemctl enable ssh

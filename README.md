@@ -1,6 +1,10 @@
 # linuxcrs_instructor
 Script for Setting up instructor laptop on ubuntu for the linux course
 
+Pre-Requisites `sudo apt install git`
+
+`cd ~'
+
 Usage `git clone https://github.com/samfree91/linuxcrs_instructor.git`
 
 `cd linuxcrs_instructor`
