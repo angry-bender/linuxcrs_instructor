@@ -93,4 +93,4 @@ cp .zshrc /home/${inuser}/
 
 echo "Setup Complete, Please log out and back in"
 echo "Note: Your terminal is now zsh, & the scripts required for course are stored in ~/linuxtraining"
-echo "SCP Username:${inuser}"
+echo "SCP Username:drop, Password Drop1"
