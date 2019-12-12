@@ -11,7 +11,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -yq -o  Dpkg::Options::="--force-
 }
 function install
 {
-echo -n "installing:$1 "
+echo -n "Installing: $1 "
 DEBIAN_FRONTEND=noninteractive apt-get install -yq -o  Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" $1 >/dev/null 2>/dev/null && echo -e "[\033[32m*\e[0m]OK" || retryinstall $1
 }
 
@@ -43,13 +43,13 @@ inuser=$SUDO_USER
 #install oh my zsh
 install curl
 install zsh
-echo -e "Installiing Oh my ZSH [-]"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 0<&- >/dev/null 2>&1
-echo -e "Oh my ZSH installation [\033[33m-\e[0m] Check after logon"
+echo -e "Installing: Oh my ZSH from external provider [-]"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 0<&-
+echo -e "Oh my ZSH installation: [\033[33m-\e[0m] Check after logon"
 
 #ensure shell changed
 usermod -s /usr/bin/zsh ${inuser}
-echo -e "${inuser} shell changed to zsh [\033[32m*\e[0m]OK"
+echo -e "${inuser} shell: changed to zsh [\033[32m*\e[0m]OK"
 
 #Install Instructor Applications
 install vim
@@ -72,8 +72,8 @@ cp -r linuxtraining /home/$inuser/
 sed -i -e "s/setupuser/"${inuser}"/g" .zshrc
 
 #Enable ssh
-systemctl enable ssh >/dev/null 2>&1 echo -e "SSH Service: [\033[32m*\e[0m]OK" || echo -e "SSH Service: [\033[31m-\e[0m]  FAILED"
-systemctl start ssh >/dev/null 2>&1 echo -e "Start SSH: [\033[32m*\e[0m]OK" || echo -e "Start SSH: [\033[31m-\e[0m]  FAILED"
+systemctl enable ssh >/dev/null 2>&1 && echo -e "SSH Service: [\033[32m*\e[0m]OK" || echo -e "SSH Service: [\033[31m-\e[0m]  FAILED"
+systemctl start ssh >/dev/null 2>&1 && echo -e "Start SSH: [\033[32m*\e[0m]OK" || echo -e "Start SSH: [\033[31m-\e[0m]  FAILED"
 
 #copy files to correct directories
 cp rssh.conf /etc/rssh.conf
