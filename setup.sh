@@ -82,6 +82,6 @@ cp .zshrc /home/${inuser}/
 echo -e "Copy Config Files: [\033[32m*\e[0m]OK"
 
 
-echo -e "[\033[32m*\e[0m]Setup Complete, Please log out and back in"
+echo -e "[\033[32m*Setup Complete*\e[0m], Please log out and back in"
 echo "Note: Your terminal is now zsh, & the scripts required for course are stored in ~/linuxtraining"
 echo "SCP Username:drop, Password Drop1"
