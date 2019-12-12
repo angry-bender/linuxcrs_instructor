@@ -29,9 +29,9 @@ fi
 #Check working directory
 FILE=.zshrc
 if test -f "$FILE"; then
-    echo -e "Working Directory Check [\033[32m*\e[0m]OK"
+    echo -e "Working Directory Check: [\033[32m*\e[0m]OK"
     else
-        echo -e "[\033[31m-\e[0m] Working Directory Check FAILED"
+        echo -e "Working Directory Check: [\033[31m-\e[0m] FAILED"
         echo "Please change to the downloaded direectory with file and run directly from there"
         echo "This script will now exit"
         exit
@@ -83,5 +83,5 @@ echo -e "Copy Config Files: [\033[32m*\e[0m]OK"
 
 
 echo -e "[\033[32m*Setup Complete*\e[0m], Please log out and back in"
-echo "Note: Your terminal is now zsh, & the scripts required for course are stored in ~/linuxtraining"
-echo "SCP Username:drop, Password Drop1"
+echo -e "[\033[33m*Note*\e[0m]: Your terminal is now zsh, & the scripts required for course are stored in ~/linuxtraining"
+echo -e "[\033[33m*Note*\e[0m]: SCP Username:drop, Password Drop1"
