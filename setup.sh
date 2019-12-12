@@ -45,6 +45,9 @@ install curl
 install zsh
 echo -e "Installing: Oh my ZSH from external provider [-]"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 0<&-
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 echo -e "Oh my ZSH installation: [\033[33m-\e[0m] Check after logon"
 
 #ensure shell changed
