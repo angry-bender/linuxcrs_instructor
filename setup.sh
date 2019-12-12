@@ -43,9 +43,11 @@ inuser=$SUDO_USER
 #install oh my zsh
 install curl
 install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 0<&- 1&2>/dev/null 
+echo -e "Installiing Oh my ZSH [-]"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 0<&- >/dev/null 2>&1
 echo -e "Oh my ZSH installation [\033[33m-\e[0m] Check after logon"
-ensure shell changed
+
+#ensure shell changed
 usermod -s /usr/bin/zsh ${inuser}
 echo -e "${inuser} shell changed to zsh [\033[32m*\e[0m]OK"
 
@@ -63,15 +65,15 @@ echo -e "Useradd: Drop [\033[32m*\e[0m]OK"
 echo drop:"Drop1" | chpasswd
 echo -e "Password Set to Drop1 for user: drop [\033[32m*\e[0m]OK"
 
-git clone https://github.com/samfree91/linuxtraining.git 1&2>/dev/null && echo -e "Training Scripts Clone: [\033[32m*\e[0m]OK" || echo -e "Training Scripts Clone: [\033[31m-\e[0m]  FAILED"
+git clone https://github.com/samfree91/linuxtraining.git >/dev/null 2>&1 && echo -e "Training Scripts Clone: [\033[32m*\e[0m]OK" || echo -e "Training Scripts Clone: [\033[31m-\e[0m]  FAILED"
 cp -r linuxtraining /home/$inuser/
 
 #remove my username with set username
 sed -i -e "s/setupuser/"${inuser}"/g" .zshrc
 
 #Enable ssh
-systemctl enable ssh 1&2>/dev/null && echo -e "SSH Service: [\033[32m*\e[0m]OK" || echo -e "SSH Service: [\033[31m-\e[0m]  FAILED"
-systemctl start ssh 1&2>/dev/null && echo -e "Start SSH: [\033[32m*\e[0m]OK" || echo -e "Start SSH: [\033[31m-\e[0m]  FAILED"
+systemctl enable ssh >/dev/null 2>&1 echo -e "SSH Service: [\033[32m*\e[0m]OK" || echo -e "SSH Service: [\033[31m-\e[0m]  FAILED"
+systemctl start ssh >/dev/null 2>&1 echo -e "Start SSH: [\033[32m*\e[0m]OK" || echo -e "Start SSH: [\033[31m-\e[0m]  FAILED"
 
 #copy files to correct directories
 cp rssh.conf /etc/rssh.conf
