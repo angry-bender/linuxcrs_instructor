@@ -43,7 +43,7 @@ inuser=$SUDO_USER
 #install oh my zsh
 install curl
 install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh 0<&-)" 2>/dev/null 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 0<&- 1&2>/dev/null 
 echo -e "Oh my ZSH installation [\033[33m-\e[0m] Check after logon"
 ensure shell changed
 usermod -s /usr/bin/zsh ${inuser}
