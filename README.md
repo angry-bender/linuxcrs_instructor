@@ -9,7 +9,7 @@ Usage `git clone https://github.com/samfree91/linuxcrs_instructor.git`
 
 `cd linuxcrs_instructor`
 
-`sudo .\setup.sh` Note: Do not use sudo su, run from your standard user and use sudo
+`sudo ./setup.sh` Note: Do not use sudo su, run from your standard user and use sudo
 
 Note: The script is designed to run directly from the linuxcrsinstructor directory
 
