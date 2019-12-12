@@ -41,6 +41,7 @@ fi
 inuser=$SUDO_USER
 
 #install oh my zsh
+install curl
 install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh 0<&-)" 2>/dev/null 
 echo -e "Oh my ZSH installation [\033[33m-\e[0m] Check after logon"
@@ -51,7 +52,6 @@ echo -e "${inuser} shell changed to zsh [\033[32m*\e[0m]OK"
 #Install Instructor Applications
 install vim
 install git
-install curl
 install cowsay
 install fortune
 install powerline
