@@ -50,9 +50,10 @@ install cowsay
 install fortune
 
 #install oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh 0<&-)" 0<&-
 ensure shell changed
-sudo -u ${inuser} chsh -s /usr/bin/zsh
+usermod -s /usr/bin/zsh ${inuser}
+
 
 #Create the drop user
 useradd -m -d /home/drop -s /usr/bin/rssh drop
