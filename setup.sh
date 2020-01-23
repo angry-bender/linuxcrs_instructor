@@ -61,6 +61,7 @@ install cowsay
 install fortune
 install powerline
 install rssh
+install ssh
 
 #Create the drop user
 useradd -m -d /home/drop -s /usr/bin/rssh drop
