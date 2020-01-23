@@ -70,8 +70,8 @@ echo -e "Password Set to Drop1 for user: drop [\033[32m*\e[0m]OK"
 
 git clone https://github.com/samfree91/linuxtraining.git >/dev/null 2>&1 && echo -e "Training Scripts Clone: [\033[32m*\e[0m]OK" || echo -e "Training Scripts Clone: [\033[31m-\e[0m]  FAILED"
 cp -r linuxtraining /home/$inuser/
-chown -R $insuer:$inuser /home/$inuser/linuxtraining/*
-chown -R $insuer:$inuser /home/$inuser/linuxtraining/.git
+chown -R $inuser:$inuser /home/$inuser/linuxtraining/*
+chown -R $inuser:$inuser /home/$inuser/linuxtraining/.git
 
 #remove my username with set username
 sed -i -e "s/setupuser/"${inuser}"/g" .zshrc
