@@ -71,8 +71,8 @@ echo -e "Useradd: Drop [\033[32m*\e[0m]OK"
 echo drop:"Drop1" | chpasswd
 echo -e "Password Set to Drop1 for user: drop [\033[32m*\e[0m]OK"
 
-git clone https://github.com/samfree91/linuxtraining.git >/dev/null 2>&1 && echo -e "Training Scripts Clone: [\033[32m*\e[0m]OK" || echo -e "Training Scripts Clone: [\033[31m-\e[0m]  FAILED"
-cp -r linuxtraining /home/$inuser/
+git clone https://github.com/angry-bender/linuxtraining.git >/dev/null 2>&1 && echo -e "Training Scripts Clone: [\033[32m*\e[0m]OK" || echo -e "Training Scripts Clone: [\033[31m-\e[0m]  FAILED"
+mv -r linuxtraining /home/$inuser/
 chown -R $inuser:$inuser /home/$inuser/linuxtraining
 
 #remove my username with set username
