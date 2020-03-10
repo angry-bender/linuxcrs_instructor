@@ -93,3 +93,5 @@ echo -e "[\033[32m*Setup Complete*\e[0m]: Please log out and back in"
 echo -e "[\033[33m*Note*\e[0m]: Your terminal is now zsh, & the scripts stored in ~/linuxtraining/linuxtraining.zip"
 echo -e "[\033[33m*Note*\e[0m]: Refer to the unit LMG for the password for linuxtraining.zip, use 7z x linuxtraining.zip to extract"
 echo -e "[\033[33m*Note*\e[0m]: SCP Username:drop, Password Drop1"
+
+git restore .zshrc >/dev/null 2>/dev/nul
