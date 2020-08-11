@@ -88,7 +88,7 @@ cp .vimrc /home/${inuser}/
 cp .zshrc /home/${inuser}/
 echo -e "Copy Config Files: [\033[32m*\e[0m]OK"
 cp -r ~/.oh-my-zsh /home/${inuser}/
-
+chown -R $inuser:$inuser /home/$inuser/.oh-my-zsh
 
 echo -e "[\033[32m*Setup Complete*\e[0m]: Please log out and back in"
 echo -e "[\033[33m*Note*\e[0m]: Your terminal is now zsh, & the scripts stored in ~/linuxtraining/linuxtraining.zip"
