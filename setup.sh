@@ -75,8 +75,6 @@ git clone https://github.com/angry-bender/linuxtraining.git >/dev/null 2>&1 && e
 mv linuxtraining /home/$inuser
 chown -R $inuser:$inuser /home/$inuser/linuxtraining
 
-#remove my username with set username
-sed -i -e "s/setupuser/"${inuser}"/g" .zshrc
 
 #Enable ssh
 systemctl enable ssh >/dev/null 2>&1 && echo -e "SSH Service: [\033[32m*\e[0m]OK" || echo -e "SSH Service: [\033[31m-\e[0m]  FAILED"
@@ -91,6 +89,9 @@ chown $inuser:$inuser /home/$inuser/.zshrc
 echo -e "Copy Config Files: [\033[32m*\e[0m]OK"
 cp -r ~/.oh-my-zsh /home/${inuser}/
 chown -R $inuser:$inuser /home/$inuser/.oh-my-zsh
+
+#remove my username with set username
+sed -i -e "s/setupuser/"${inuser}"/g" .zshrc
 
 
 
