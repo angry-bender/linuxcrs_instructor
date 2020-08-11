@@ -85,10 +85,14 @@ systemctl start ssh >/dev/null 2>&1 && echo -e "Start SSH: [\033[32m*\e[0m]OK" |
 #copy files to correct directories
 cp rssh.conf /etc/rssh.conf
 cp .vimrc /home/${inuser}/
+chown $inuser:$inuser /home/$inuser/*.vimrc
 cp .zshrc /home/${inuser}/
+chown $inuser:$inuser /home/$inuser/*.zshrc
 echo -e "Copy Config Files: [\033[32m*\e[0m]OK"
 cp -r ~/.oh-my-zsh /home/${inuser}/
 chown -R $inuser:$inuser /home/$inuser/.oh-my-zsh
+
+
 
 echo -e "[\033[32m*Setup Complete*\e[0m]: Please log out and back in"
 echo -e "[\033[33m*Note*\e[0m]: Your terminal is now zsh, & the scripts stored in ~/linuxtraining/linuxtraining.zip"
