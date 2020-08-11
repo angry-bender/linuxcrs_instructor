@@ -92,6 +92,8 @@ chown -R $inuser:$inuser /home/$inuser/.oh-my-zsh
 
 #remove my username with set username
 sed -i -e "s/setupuser/"${inuser}"/g" .zshrc
+sed -i -e "s/root/"${inuser}"/g" .zshrc
+sed -i -e "s/user/"${inuser}"/g" .zshrc
 
 
 
