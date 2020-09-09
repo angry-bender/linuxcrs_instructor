@@ -91,9 +91,10 @@ cp -r ~/.oh-my-zsh /home/${inuser}/
 chown -R $inuser:$inuser /home/$inuser/.oh-my-zsh
 
 #remove my username with set username
-sed -i -e "s/setupuser/"${inuser}"/g" .zshrc
-sed -i -e "s/root/"${inuser}"/g" .zshrc
-sed -i -e "s/user/"${inuser}"/g" .zshrc
+sed -i -e "s/setupuser/"${inuser}"/g" /home/"${inuser}"/zshrc
+sed -i -e "s/root/"${inuser}"/g" /home/"${inuser}"/.zshrc
+sed -i -e "s/user/"${inuser}"/g" /home/"${inuser}"/.zshrc
+echo "fortune | cowsay" >> /home/"${inuser}"/.zshrc 
 
 
 
